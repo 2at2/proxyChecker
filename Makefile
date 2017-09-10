@@ -14,10 +14,10 @@ release: ## Builds release
 	@printf "\n\033[0;32mBuilding binaries\033[0m\n"
 	@rm -rf release/
 	@mkdir -p release/
-	GOOS="linux" go build -o release/checker-linux checker.go
-	GOOS="linux" go build -o release/target-linux target.go
-	GOOS="darwin" go build -o release/checker-darwin checker.go
-	GOOS="darwin" go build -o release/target-darwin target.go
+	GOOS="linux" go build -o release/checker-linux checker/main.go
+	GOOS="linux" go build -o release/target-linux target/main.go
+	GOOS="darwin" go build -o release/checker-darwin checker/main.go
+	GOOS="darwin" go build -o release/target-darwin target/main.go
 	@printf "\n\033[0;32mDone\033[0m\n"
 
 help:

@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 	"time"
-	"github.com/strebul/proxyChecker/checker"
+	"github.com/2at2/proxyChecker/checker/module"
 )
 
 func main() {
@@ -79,14 +79,14 @@ func main() {
 
 	log.Info("Filtered :count unique proxies", wd.IntParam("count", len(mappedList)))
 
-	module, err := checker.NewModule(target, mappedList, log)
+	checkerModule, err := module.NewModule(target, mappedList, log)
 
 	if err != nil {
 		log.Error("Unable to build module - :err", wd.ErrParam(err))
 		panic(err)
 	}
 
-	results, err := module.Process()
+	results, err := checkerModule.Process()
 
 	if err != nil {
 		log.Error("Failed process - :err", wd.ErrParam(err))
