@@ -9,17 +9,6 @@ make deps
 make release
 ```
 
-## Target
-Listens port and responds information about request.
-
-Params:
-* --port - 80 by default
-
-Command:
-```
-release/target --port 8080
-```
-
 ## Checker
 
 Params:
@@ -36,4 +25,15 @@ Example file of proxies:
 Command:
 ```
 release/checker --target 127.0.0.1:8080 --file pathToFile --result pathToFile
+```
+
+## Target
+Listens port and responds information about request.
+
+Params:
+* --port - 80 by default
+
+Command:
+```
+release/target --port 8080
 ```
